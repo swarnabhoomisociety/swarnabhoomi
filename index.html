@@ -760,10 +760,23 @@ footer a:hover { color: #f0d58a; }
 
 /* tablet / narrow embed fixes */
 @media (max-width: 1180px) { .hd .tools { margin-left: auto; } }
-@media (max-width: 1260px) { .hctl { display: none; } }
+@media (max-width: 1420px) { .hctl { display: none; } }
+
+/* loading splash - hides the page until content is ready (prevents flicker on refresh) */
+#splash { position: fixed; inset: 0; z-index: 99999; display: grid; place-items: center; align-content: center; gap: 16px; background: #1d160a; color: #f3e2b4; transition: opacity .45s ease, visibility .45s; font: 600 1.05rem "Cormorant Garamond", Georgia, serif; letter-spacing: .06em; text-align: center; }
+#splash.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+#splash i { width: 38px; height: 38px; border-radius: 50%; border: 3px solid rgba(243,226,180,.25); border-top-color: #e2bd68; animation: spl .9s linear infinite; }
+@keyframes spl { to { transform: rotate(360deg); } }
+
+/* keep hero text clear of the fixed header on short screens */
+.h3hero .hc { padding-top: 120px; }
+@media (max-height: 800px) { .h3hero h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); } .h3hero p.lead { margin: 14px 0 22px; font-size: 1.02rem; } .h3hero .hc { padding-bottom: 36px; } }
 </style>
 </head>
 <body>
+<div id="splash"><i></i><span>Swarnabhoomi Society</span></div>
+<script>setTimeout(function(){var s=document.getElementById("splash");if(s){s.classList.add("gone");setTimeout(function(){s.remove()},600)}},9000);</script>
+
 
 <!-- SVG icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -2914,6 +2927,7 @@ footer a:hover { color: #f0d58a; }
   })();
 
   route();
+  (function () { const s = document.getElementById("splash"); if (s) { s.classList.add("gone"); setTimeout(() => s.remove(), 600); } })();
   })();
 </script>
 </body>
