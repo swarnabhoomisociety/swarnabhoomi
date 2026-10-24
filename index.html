@@ -1060,7 +1060,7 @@ footer a:hover { color: #f0d58a; }
         <form id="cmpForm">
           <div class="two">
             <label>Full name<input name="name" placeholder="Jane Doe" required></label>
-            <label>Flat / unit no.<input name="flat" placeholder="e.g. B-402" required></label>
+            <label>Villa no.<input name="villa" placeholder="e.g. 24" required></label>
           </div>
           <div class="two">
             <label>Phone<input name="phone" type="tel" placeholder="Mobile number" required></label>
@@ -1186,7 +1186,7 @@ footer a:hover { color: #f0d58a; }
           </div>
           <div class="two">
             <label>Your name<input name="rname" placeholder="Resident name" required></label>
-            <label>Flat / unit no.<input name="flat" placeholder="e.g. B-402" required></label>
+            <label>Villa no.<input name="villa" placeholder="e.g. 24" required></label>
           </div>
           <button class="btn dark" type="submit" style="justify-self:start">Send to security <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></button>
           <p class="sample-note" style="margin:0">Submitting opens your email app with the details filled in.</p>
@@ -1426,12 +1426,12 @@ footer a:hover { color: #f0d58a; }
     { cat: "Parking",     q: "Where can my visitors park?", a: "Visitor parking is available near the main gate. Please do not block internal roads or resident bays." },
     { cat: "Parking",     q: "How do I get a vehicle sticker?", a: "Download the Vehicle sticker application form from Notices & Documents and submit it at the Society office with your vehicle papers." },
     { cat: "Visitors",    q: "How do I pre-approve a guest or delivery?", a: "Use the Visitor Pre-approval page. Security will have the details ready at the gate." },
-    { cat: "Maintenance", q: "How do I report a problem in my flat or common area?", a: "Use Complaints & Requests. For emergencies, call the security desk or the numbers on the Resident Services page." },
+    { cat: "Maintenance", q: "How do I report a problem in my villa or common area?", a: "Use Complaints & Requests. For emergencies, call the security desk or the numbers on the Resident Services page." },
     { cat: "Maintenance", q: "Where can I find the maintenance charges circular?", a: "In Notices & Documents under Circulars." },
     { cat: "Amenities",   q: "What are the pool and gym timings?", a: "Timings are shown on the Facilities page and may change seasonally. Notices are posted on the Community page." },
     { cat: "Rules",       q: "Are pets allowed in the Society?", a: "Yes, with registration and vaccination. Pets must be on a leash in common areas and owners must clean up after them.", link: "rules" },
     { cat: "Rules",       q: "What are the quiet hours?", a: "Quiet hours are 10:00 PM to 7:00 AM. Loud music and parties should end by 10:00 PM.", link: "rules" },
-    { cat: "Rules",       q: "When can I do renovation work in my flat?", a: "Monday to Saturday, 9:00 AM to 6:00 PM, after written permission from the Society office. No work on Sundays or public holidays.", link: "rules" },
+    { cat: "Rules",       q: "When can I do renovation work in my villa?", a: "Monday to Saturday, 9:00 AM to 6:00 PM, after written permission from the Society office. No work on Sundays or public holidays.", link: "rules" },
     { cat: "Rules",       q: "What is the process for moving in or out?", a: "Submit the move-in / move-out form at least 3 days in advance. Moves are allowed 9:00 AM to 6:00 PM and all dues must be cleared before moving out.", link: "rules" },
     { cat: "Emergency",   q: "Where are the emergency numbers and fire exits?", a: "See the Emergency & Safety page for emergency numbers, fire exits, the assembly point and nearby hospitals.", link: "safety" },
     { cat: "Amenities",   q: "Can children use the pool and gym?", a: "Children can use the pool with an adult. The gym is for adult residents." },
@@ -1439,12 +1439,12 @@ footer a:hover { color: #f0d58a; }
 
   // ---- Classifieds (SAMPLE listings) ----
   const ADS = [
-    { type: "For sale",     title: "Study table with chair",     price: "Rs. 3,500", by: "Flat B-402", date: "2026-10-08", text: "Good condition, solid wood. Pickup from the flat." },
-    { type: "For sale",     title: "Kids' bicycle (ages 6-9)",   price: "Rs. 2,000", by: "Flat C-105", date: "2026-10-06", text: "Lightly used with training wheels and a helmet." },
-    { type: "Wanted",       title: "Part-time tutor for Class 8", price: "",         by: "Flat A-303", date: "2026-10-05", text: "Looking for a maths and science tutor, evenings." },
+    { type: "For sale",     title: "Study table with chair",     price: "Rs. 3,500", by: "Villa B-402", date: "2026-10-08", text: "Good condition, solid wood. Pickup from the villa." },
+    { type: "For sale",     title: "Kids' bicycle (ages 6-9)",   price: "Rs. 2,000", by: "Villa C-105", date: "2026-10-06", text: "Lightly used with training wheels and a helmet." },
+    { type: "Wanted",       title: "Part-time tutor for Class 8", price: "",         by: "Villa A-303", date: "2026-10-05", text: "Looking for a maths and science tutor, evenings." },
     { type: "Lost & found", title: "Found: set of keys",         price: "",          by: "Society office", date: "2026-10-04", text: "Found near the clubhouse. Collect from the office with identification." },
-    { type: "Ride share",   title: "Daily commute to the city",  price: "",          by: "Flat D-212", date: "2026-10-03", text: "Offering seats in a car pool, leaving around 8:30 AM on weekdays." },
-    { type: "Services",     title: "Home tuition - music",       price: "On request", by: "Flat B-110", date: "2026-10-01", text: "Guitar and keyboard lessons for kids and adults at home." },
+    { type: "Ride share",   title: "Daily commute to the city",  price: "",          by: "Villa D-212", date: "2026-10-03", text: "Offering seats in a car pool, leaving around 8:30 AM on weekdays." },
+    { type: "Services",     title: "Home tuition - music",       price: "On request", by: "Villa B-110", date: "2026-10-01", text: "Guitar and keyboard lessons for kids and adults at home." },
   ];
 
   // ---- Polls & surveys (SAMPLE) ----
@@ -1808,12 +1808,12 @@ footer a:hover { color: #f0d58a; }
       const rows = ADS.slice().sort((a, b) => b.date.localeCompare(a.date)).filter(a => acat === "All" || a.type === acat);
       ag.innerHTML = rows.map(a => `<article class="ad"><div class="top"><span class="ptag Community">${esc(a.type)}</span>${a.price ? `<span class="price">${esc(a.price)}</span>` : ""}</div>
         <h3>${esc(a.title)}</h3><p>${esc(a.text)}</p>
-        <div class="who"><span class="av" style="background:${col(a.by)};width:30px;height:30px;font-size:.7rem;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700">${esc(ini(a.by.replace(/^Flat\s*/, "")))}</span><span><b>${esc(a.by)}</b>${fmt(a.date)}</span></div>
+        <div class="who"><span class="av" style="background:${col(a.by)};width:30px;height:30px;font-size:.7rem;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700">${esc(ini(a.by.replace(/^Villa\s*/, "")))}</span><span><b>${esc(a.by)}</b>${fmt(a.date)}</span></div>
         <a class="btn dark" href="${mail("Classifieds enquiry: " + a.title, "Hi, I'm interested in your listing: " + a.title + " (" + a.by + ").")}">Contact</a></article>`).join("");
       document.getElementById("adEmpty").style.display = rows.length ? "none" : "";
     }
     chips(document.getElementById("adFilters"), ["All", ...new Set(ADS.map(a => a.type))], t => { acat = t; ads(); });
-    document.getElementById("postAd").href = mail("Classifieds - new listing", "Type (For sale / Wanted / Lost & found / Ride share / Services):\nTitle:\nPrice (if any):\nDetails:\nYour name and flat no.:\nContact number:");
+    document.getElementById("postAd").href = mail("Classifieds - new listing", "Type (For sale / Wanted / Lost & found / Ride share / Services):\nTitle:\nPrice (if any):\nDetails:\nYour name and villa no.:\nContact number:");
     ads();
 
     // polls
@@ -1829,9 +1829,9 @@ footer a:hover { color: #f0d58a; }
     if (VISITOR_FORM_URL) { document.getElementById("visFrame").src = VISITOR_FORM_URL; document.getElementById("visEmbed").style.display = ""; document.getElementById("visForm").style.display = "none"; }
     document.getElementById("visForm").addEventListener("submit", e => {
       e.preventDefault(); const f = new FormData(e.target);
-      window.open(mail("Visitor pre-approval - Flat " + f.get("flat") + " - " + f.get("date"),
+      window.open(mail("Visitor pre-approval - Villa " + f.get("villa") + " - " + f.get("date"),
         "Visitor: " + f.get("vname") + "\nVisitor phone: " + f.get("vphone") + "\nDate: " + f.get("date") + "\nExpected time: " + f.get("time") + "\nPurpose: " + f.get("purpose") +
-        "\nVehicle: " + f.get("veh") + "\n\nResident: " + f.get("rname") + "\nFlat: " + f.get("flat")));
+        "\nVehicle: " + f.get("veh") + "\n\nResident: " + f.get("rname") + "\nFlat: " + f.get("villa")));
     });
 
     // newsletter
@@ -1902,8 +1902,8 @@ footer a:hover { color: #f0d58a; }
     }
     document.getElementById("cmpForm").addEventListener("submit", e => {
       e.preventDefault(); const f = new FormData(e.target);
-      const subj = "[" + f.get("prio") + "] " + f.get("cat") + " - Flat " + f.get("flat");
-      const body = "Name: " + f.get("name") + "\nFlat: " + f.get("flat") + "\nPhone: " + f.get("phone") + "\nCategory: " + f.get("cat") + "\nPriority: " + f.get("prio") + "\n\n" + f.get("desc");
+      const subj = "[" + f.get("prio") + "] " + f.get("cat") + " - Villa " + f.get("villa");
+      const body = "Name: " + f.get("name") + "\nFlat: " + f.get("villa") + "\nPhone: " + f.get("phone") + "\nCategory: " + f.get("cat") + "\nPriority: " + f.get("prio") + "\n\n" + f.get("desc");
       window.open("mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body));
     });
   })();
@@ -1954,7 +1954,7 @@ footer a:hover { color: #f0d58a; }
       fl.appendChild(b);
     });
     document.getElementById("shareBtn").href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Community post - photo / story") +
-      "&body=" + encodeURIComponent("Title:\nWhat happened / date:\nYour name and flat no.:\n(Attach your photos)");
+      "&body=" + encodeURIComponent("Title:\nWhat happened / date:\nYour name and villa no.:\n(Attach your photos)");
     render();
   })();
 
@@ -1978,7 +1978,7 @@ footer a:hover { color: #f0d58a; }
   });
   function mail(sp) {
     const subj = "Booking request - " + (sp ? sp.name : "Swarnabhoomi");
-    const body = "Space: " + (sp ? sp.name : "") + "\nDate(s): \nTiming: \nPurpose: \nNo. of guests: \nResident name / flat no.: \nContact number: ";
+    const body = "Space: " + (sp ? sp.name : "") + "\nDate(s): \nTiming: \nPurpose: \nNo. of guests: \nResident name / villa no.: \nContact number: ";
     return "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
   }
   function showSpace(i) {
@@ -2333,7 +2333,7 @@ footer a:hover { color: #f0d58a; }
 "Complaints & requests": "शिकायतें और अनुरोध",
 "Report a problem or make a request. The Society office will acknowledge it and keep you updated.": "समस्या बताएँ या अनुरोध करें। सोसायटी कार्यालय उसे दर्ज करेगा और आपको जानकारी देता रहेगा।",
 "Full name": "पूरा नाम",
-"Flat / unit no.": "फ़्लैट / यूनिट नंबर",
+"Villa no.": "विला नंबर",
 "Phone": "फ़ोन",
 "Mobile number": "मोबाइल नंबर",
 "Category": "श्रेणी",
@@ -2496,7 +2496,7 @@ footer a:hover { color: #f0d58a; }
 "Download the Vehicle sticker application form from Notices & Documents and submit it at the Society office with your vehicle papers.": "सूचनाएँ और दस्तावेज़ से वाहन स्टिकर आवेदन फ़ॉर्म डाउनलोड करें और वाहन के कागज़ात के साथ सोसायटी कार्यालय में जमा करें।",
 "How do I pre-approve a guest or delivery?": "मेहमान या डिलीवरी की पूर्व-अनुमति कैसे दूँ?",
 "Use the Visitor Pre-approval page. Security will have the details ready at the gate.": "आगंतुक पूर्व-अनुमति पृष्ठ का उपयोग करें। सुरक्षा के पास गेट पर विवरण तैयार रहेगा।",
-"How do I report a problem in my flat or common area?": "अपने फ़्लैट या साझा क्षेत्र की समस्या कैसे बताऊँ?",
+"How do I report a problem in my villa or common area?": "अपने विला या साझा क्षेत्र की समस्या कैसे बताऊँ?",
 "Use Complaints & Requests. For emergencies, call the security desk or the numbers on the Resident Services page.": "शिकायतें और अनुरोध का उपयोग करें। आपात स्थिति में सुरक्षा डेस्क या निवासी सेवाएँ पृष्ठ के नंबरों पर कॉल करें।",
 "Where can I find the maintenance charges circular?": "रखरखाव शुल्क का परिपत्र कहाँ मिलेगा?",
 "In Notices & Documents under Circulars.": "सूचनाएँ और दस्तावेज़ में परिपत्र के अंतर्गत।",
@@ -2507,7 +2507,7 @@ footer a:hover { color: #f0d58a; }
 "Read the rules →": "नियम पढ़ें →",
 "What are the quiet hours?": "शांति के घंटे कौन से हैं?",
 "Quiet hours are 10:00 PM to 7:00 AM. Loud music and parties should end by 10:00 PM.": "शांति के घंटे रात 10:00 से सुबह 7:00 तक हैं। तेज़ संगीत और पार्टियाँ रात 10:00 बजे तक समाप्त करें।",
-"When can I do renovation work in my flat?": "मैं अपने फ़्लैट में मरम्मत का काम कब करा सकता/सकती हूँ?",
+"When can I do renovation work in my villa?": "मैं अपने विला में मरम्मत का काम कब करा सकता/सकती हूँ?",
 "Monday to Saturday, 9:00 AM to 6:00 PM, after written permission from the Society office. No work on Sundays or public holidays.": "सोसायटी कार्यालय की लिखित अनुमति के बाद सोमवार से शनिवार, सुबह 9:00 से शाम 6:00 तक। रविवार या सार्वजनिक अवकाश पर कोई काम नहीं।",
 "What is the process for moving in or out?": "घर में आने या छोड़ने की प्रक्रिया क्या है?",
 "Submit the move-in / move-out form at least 3 days in advance. Moves are allowed 9:00 AM to 6:00 PM and all dues must be cleared before moving out.": "घर में आने / छोड़ने का फ़ॉर्म कम से कम 3 दिन पहले जमा करें। सामान शिफ़्ट करना सुबह 9:00 से शाम 6:00 तक मान्य है और जाने से पहले सभी बकाया चुकाना आवश्यक है।",
@@ -2527,7 +2527,7 @@ footer a:hover { color: #f0d58a; }
 "Services": "सेवाएँ",
 "+ Post an ad": "+ विज्ञापन डालें",
 "Study table with chair": "कुर्सी सहित पढ़ाई की मेज़",
-"Good condition, solid wood. Pickup from the flat.": "अच्छी हालत, ठोस लकड़ी। फ़्लैट से ले जाएँ।",
+"Good condition, solid wood. Pickup from the villa.": "अच्छी हालत, ठोस लकड़ी। विला से ले जाएँ।",
 "Kids' bicycle (ages 6-9)": "बच्चों की साइकिल (6-9 वर्ष)",
 "Lightly used with training wheels and a helmet.": "थोड़ी इस्तेमाल की हुई, ट्रेनिंग व्हील और हेलमेट सहित।",
 "Part-time tutor for Class 8": "कक्षा 8 के लिए अंशकालिक शिक्षक",
@@ -2750,7 +2750,7 @@ footer a:hover { color: #f0d58a; }
 "Swarnabhoomi Society. All rights reserved.": "स्वर्णभूमि सोसायटी। सर्वाधिकार सुरक्षित।",
 "Swarn Bhoomi Sahkari Avasiya Sahkari Samiti Maryadit, Raipur": "स्वर्ण भूमि सहकारी आवासीय सहकारी समिति मर्यादित, रायपुर",
 "Society": "सोसायटी",
-"Flat": "फ़्लैट",
+"Villa": "विला",
 "Booking charges": "बुकिंग शुल्क"
 };
   window.__HI = HI;
